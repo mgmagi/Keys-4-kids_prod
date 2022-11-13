@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Keys for Kids</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="assets/js/dynamicGen.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header"></div>
+
+		<!-- Nav / Menu-->
+			<nav id="menu"></nav>
+
+		<!-- Heading -->
+			<div id="heading" >
+				<h1 id="title">Group Schedules</h1>
+			</div>
+		
+		<!--Style (for selectively viewing tables using jQuery)-->
+		<style>
+			.CurrentSemester{display: block}
+			.NextSemester{display: none}
+			.NextNextSemester{display: none}
+			#content{visibility: hidden}
+			#loader{
+			    background: url(https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif) no-repeat center center;
+				position: fixed;
+				left: 50%;
+				transform: translate(-50%, 0);
+				display: block;
+				height: 10rem;
+				width: 10rem;
+			}
+		</style>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div id = "loader"></div>
+					<div id = "content" class="content" >
+						<div class="row">
+							<div class="col-8 col-12-medium">
+								<h3 style="margin-bottom:0.75rem">Choose a Group Class and Semester Below:</h3>
+								<!--dropdown-->
+								<div>
+									<form method="post" action="#">
+										<select id="groupSelect" onchange="updateGroup()">
+											<option value="keys" selected>Keys for Kids Groups</option>
+											<option value="drum">Drum 'N Kids</option>
+											<option value="strum">Strum 'N Kids'</option>
+											<option value="sing">Sing 'N Kids'</option>
+											<option value="string">Violin and Strings Groups</option>
+											<!--<option value="Piano">Piano</option>-->
+										</select>
+									</form>
+								</div>
+								<!--radio controls-->
+								<div>
+									<div class="col-4 col-12-small">
+										<input type="radio" autocomplete="off" id="checkbox-alpha" name="checkbox" value="CurrentSemester" checked>
+										<label id="checkbox-alpha-text" for="checkbox-alpha"></label>
+									</div>
+									<div class="col-4 col-12-small">
+										<input type="radio" autocomplete="off" id="checkbox-beta" name="checkbox" value="NextSemester">
+										<label id="checkbox-beta-text" for="checkbox-beta"></label>
+									</div>
+									<div class="col-4 col-12-small">
+										<input type="radio" autocomplete="off" id="checkbox-gamma" name="checkbox" value="NextNextSemester">
+										<label id="checkbox-gamma-text" for="checkbox-gamma"></label>
+									</div>
+								</div>
+								<div style="margin-bottom: 1rem"></div>
+								<h3 style="margin-bottom:0.75rem"><strong>Teachers:</strong></h3>
+								<p id="teachersReadout"></p>
+								<p style="margin-bottom:1rem"><i>Continued classes marked with small letter "c"</i></p>
+							</div>
+							<div class="col-4 col-12-medium">
+								<div class="simplegreybox">
+									<h3 style="margin-bottom:0.7rem;"><strong>Important Notes</strong></h3>
+									<div id="list">
+										<ul>
+											<li>BEGINNING students should start in one of the <strong>LEVEL 1</strong> classes, according to the age.</li>
+											<li>Registration from fall to winter and to spring is automatic</li>
+											<li><strong>Parent/Caregiver participation at lessons is required.</strong></li>
+											<li>No prior musical experience necessary for level one classes.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<style>
+							.tableHolder .table-wrapper table tr td {
+								padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+							}
+						</style>
+						<div style="margin-bottom: 1rem"></div>
+						<div class="CurrentSemester tableHolder">
+							<div class="table-wrapper">
+								<table id="table0Readout" class="alt">
+								</table>
+							</div>
+						</div>
+						<div class="NextSemester tableHolder">
+							<div class="table-wrapper">
+								<table id="table1Readout" class="alt">
+								</table>
+							</div>
+						</div>
+						<div class="NextNextSemester tableHolder">
+							<div class="table-wrapper">
+								<table id="table2Readout" class="alt">
+								</table>
+							</div>
+						</div>
+						
+						<!--iframe imports from dynamically generated htmls. Used to parce and display-->
+						<div style="display: none">
+							<iframe id="titleGet" onload="titleAccess()"></iframe>
+							<iframe id="semesters" onload="semestersAccess()"></iframe>
+							<iframe id="teachers" onload="teachersAccess()"></iframe>
+							<iframe id="currSem" onload="currSemAccess()"></iframe>
+							<iframe id="nextSem" onload="nextSemAccess()"></iframe>
+							<iframe id="nextNextSem" onload="nextNextSemAccess();showStuff()"></iframe>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<div id="Footer"></div>
+		
+		<!-- Scripts -->
+		      <script>
+				updateGroup();
+			  </script>
+		      <script src="assets/js/jquery.min.js"></script>
+		      <script src="assets/js/browser.min.js"></script>
+		      <script src="assets/js/breakpoints.min.js"></script>
+		      <script src="assets/js/util.js"></script>
+		      <script src="assets/js/main.js"></script>
+		      <script src="assets/js/loadPageElems.js"></script>
+
+	</body>
+</html>

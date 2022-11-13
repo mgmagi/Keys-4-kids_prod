@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Keys for Kids</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="v2/assets/css/main.css" />
+		<link rel="shortcut icon" href="v2/images/favicon.ico" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+		<script>
+		$( 
+			function() 
+			{
+				$('#DatePickerReschedule').datepicker
+				(
+				{ 
+					dateFormat: 'D, M dd yy' 
+				}
+				);
+			} 
+		);			
+		</script>
+
+		<script>
+		$( 
+			function() 
+			{
+				$('#DatePickerControlPanel').datepicker
+				(
+				{ 
+					dateFormat: 'D, M dd yy' 
+				}
+				);
+			} 
+		);			
+		</script>
+
+        <!--
+            TimePicker courtesy https://www.jonthornton.com/jquery-timepicker/
+        -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/timepicker@1.14.0/jquery.timepicker.min.css" />
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/timepicker@1.14.0/jquery.timepicker.min.js"></script>
+        <script>
+		$(
+			function()
+			{
+				$('#TimePicker').timepicker
+				(
+				{
+					'noneOption': 
+					[
+						{'label': '.','value': ''}
+					],
+					'minTime': '8:00am',
+					'maxTime': '21:00pm',
+					'timeFormat': 'H:i A',
+					'step': 5
+				}
+				);
+			}
+		);
+
+        </script>
+
+        <script src="v2/assets/js/util.js"></script>
+		<script src="v2/assets/js/attendanceEditor.js"></script>
+		<script src="v2/assets/js/KeysForKids.js"></script>
+
+	</head>
+	<!--adjust tables because they are used for page formatting in these cases-->
+	<style>
+		#form1 table tbody tr {
+			background-color: inherit;
+			border: none;
+
+		}
+	</style>
+	<body class="is-preload" onload="onLoad()" onscroll="onScroll()">
+
+
+		<!-- Header -->
+			<div id="header"></div>
+
+		<!-- Nav / Menu-->
+			<nav id="menu"></nav>
+
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>PH_PageTitle_PH</h1>
+			</div>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+						<div>
+         					PH_FormBody_PH
+						  <script type="text/javascript">
+								PH_JavaScriptBody_PH
+							</script>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<div id="Footer"></div>
+		      <!-- Scripts -->
+		  	<script type="text/javascript" >
+				//for compatability with imported template html
+				var ignoreChangeElement = [];
+		  	</script>
+            
+            <script src="v2/assets/js/browser.min.js"></script>
+        	<script src="v2/assets/js/breakpoints.min.js"></script>
+            <script src="v2/assets/js/main.js"></script>
+        	<script src="v2/assets/js/loadPageElems.js"></script>
+            <script src="v2/assets/js/adedapi.js"></script>
+			<script src="v2/assets/js/interestForm.js"></script>
+
+
+<!-- 2021-09-30, Mark G Magid
+	version of the jquery appears to be incompatible with the version that is used for the jquery DatePicker above (jquery-1.12.4.js)
+	      	<script src="v2/assets/js/jquery.min.js"></script>
+-->
+	</body>
+</html>
