@@ -3482,11 +3482,18 @@ input.disabled_virtually {
 
 table.LessonTable{
 	text-align: left;
+	margin: 0 0 0 0;
+}
+
+table.LessonTable td{
+	vertical-align: middle;
+	padding: 0.1rem;
 }
 
 table.StudentTable {
 	border: 1px solid #999;
 	border-collapse: collapse;
+	margin: 0 0 0 0;
 }
 
 table.StudentTable tr{
@@ -3737,3 +3744,8 @@ textarea {
 	padding: 0 0;
 }
 
+table.DateTimePicker {
+	text-align: left;
+	vertical-align: middle;
+	margin: 0 0 0 0;
+}
